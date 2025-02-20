@@ -1,0 +1,42 @@
+/* Make sure the footer is pushed to the bottom */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1; /* Ensures the content expands while pushing the footer down */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1976D2;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-link {
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #ff9800;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+    }
+}

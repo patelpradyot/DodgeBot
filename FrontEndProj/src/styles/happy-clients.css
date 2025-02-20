@@ -1,0 +1,44 @@
+.clients-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.clients-title {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.clients-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.client-card {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.client-card:hover {
+    transform: scale(1.05);
+}
+
+.client-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1976D2;
+}
+
+@media (max-width: 768px) {
+    .clients-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
