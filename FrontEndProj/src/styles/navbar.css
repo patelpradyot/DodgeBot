@@ -1,10 +1,11 @@
 .navbar {
-    background-color: #1976D2;
-    color: white;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .nav-links {
@@ -12,30 +13,32 @@
     gap: 20px;
 }
 
-.nav-link {
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: #ff9800;
-}
-
-/* Mobile menu */
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
+/* Hide default nav-links on mobile */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links.open {
+        display: flex; /* Show only when mobileOpen is true */
+    }
+
+    .nav-link {
+        padding: 10px;
+        width: 100%;
     }
 
     .menu-icon {
         display: block;
+        cursor: pointer;
     }
 }
