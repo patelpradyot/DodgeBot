@@ -1,63 +1,80 @@
+/* Pricing Section */
 .pricing-section {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #ffffff;
-}
-
-.pricing-title {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-.pricing-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.pricing-card {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-    transition: transform 0.3s;
-}
-
-.pricing-card:hover {
-    transform: scale(1.05);
-}
-
-.pricing-plan {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #1976D2;
-}
-
-.pricing-price {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    color: #555;
-}
-
-.pricing-button {
-    background-color: #1976D2;
+    align-items: center;
+    min-height: 100vh;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0a0f24, #16213e); /* Dark Gradient */
     color: white;
-    padding: 10px 20px;
+}
+
+/* Content Container */
+.pricing-content {
+    max-width: 600px;
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle Background */
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Title Styling */
+.pricing-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description Styling */
+.pricing-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Contact Card */
+.pricing-card {
+    background: #0f3460; /* Dark Blue */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pricing-contact-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pricing-contact-text {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Contact Button */
+.pricing-button {
+    background: #ffdd57;
+    color: #1a1a2e;
     border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
 .pricing-button:hover {
-    background-color: #125aa3;
+    background: #f7c948;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .pricing-container {
-        flex-direction: column;
-        align-items: center;
+    .pricing-content {
+        width: 90%;
+        padding: 30px;
     }
 }

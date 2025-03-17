@@ -1,40 +1,124 @@
-.contact-section {
+/* Colorful Contact Page */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    padding: 20px;
+}
+
+/* Contact Card */
+.contact-card {
+    width: 90%;
+    max-width: 450px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    padding: 60px 20px;
-    background-color: #f4f4f4;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-in-out;
 }
 
 .contact-title {
-    font-size: 2.5rem;
+    font-size: 28px;
+    font-weight: bold;
     color: #333;
 }
 
-.contact-form {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
+.contact-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Contact Details */
+.contact-details {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    background: #f1f1f1;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
 }
 
-.contact-button {
-    background-color: #1976D2;
+.contact-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Icon Colors */
+.email-icon {
+    color: #e63946;
+}
+
+.phone-icon {
+    color: #1d3557;
+}
+
+.linkedin {
+    background: #0077b5;
     color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-weight: bold;
 }
 
-.contact-button:hover {
-    background-color: #125aa3;
+.linkedin:hover {
+    background: #005983;
+}
+
+.linkedin-icon {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 20px;
+    }
+
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .contact-description {
+        font-size: 14px;
+    }
+
+    .contact-item {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .contact-icon {
+        font-size: 20px;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

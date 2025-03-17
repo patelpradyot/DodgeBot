@@ -1,44 +1,109 @@
+/* ======= Section Background ======= */
 .clients-section {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #ffffff;
-}
-
-.clients-title {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-.clients-container {
+    width: 100%;
+    min-height: 100vh; /* Full height */
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+    align-items: center;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Dark modern theme */
+    color: white;
+    padding: 60px 20px;
 }
 
-.client-card {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
+/* ======= Container Centering ======= */
+.clients-container {
+    max-width: 1200px;
+    width: 100%;
     text-align: center;
-    width: 300px;
-    transition: transform 0.3s;
+}
+
+/* ======= Title & Subtitle ======= */
+.clients-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffdd57; /* Gold Accent */
+    margin-bottom: 15px;
+}
+
+.clients-subtitle {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* ======= Grid Layout ======= */
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* ======= Individual Card Styling ======= */
+.client-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .client-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
 }
 
-.client-name {
-    font-size: 1.5rem;
+/* ======= Card Title & Description ======= */
+.client-title {
+    font-size: 22px;
     font-weight: bold;
-    color: #1976D2;
+    color: #ffdd57;
+    margin-bottom: 10px;
+}
+
+.client-description {
+    font-size: 16px;
+    opacity: 0.85;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* ======= Trust Message ======= */
+.trust-message {
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffdd57;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 1024px) {
+    .clients-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
-    .clients-container {
-        flex-direction: column;
-        align-items: center;
+    .clients-title {
+        font-size: 32px;
+    }
+
+    .clients-subtitle {
+        font-size: 16px;
+    }
+
+    .clients-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .client-card {
+        padding: 25px;
     }
 }
