@@ -10,34 +10,38 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(window.scrollY > 50);
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Prevent scrolling when mobile menu is open
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }, [mobileOpen]);
+
     return (
         <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
             <div className="logo">Dodgebot</div>
 
-            {/* Desktop & Mobile Navigation */}
-            <div className={`nav-links ${mobileOpen ? "open" : ""}`}>
-                <Link to="/" className="nav-link" onClick={() => setMobileOpen(false)}>Home</Link>
-                <Link to="/pricing" className="nav-link" onClick={() => setMobileOpen(false)}>Pricing</Link>
-                <Link to="/solutions" className="nav-link" onClick={() => setMobileOpen(false)}>Solutions</Link>
-                {/*<Link to="/case-studies" className="nav-link" onClickk={() => setMobileOpen(false)}>Case Studies</Link>*/}
-                <Link to="/contact" className="nav-link" onClick={() => setMobileOpen(false)}>Contact</Link>
-                <Link to="/why-dodgebot" className="nav-link" onClick={() => setMobileOpen(false)}>Why Choose Dodgebot?</Link>
-            </div>
-
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Icon */}
             <div className="menu-icon" onClick={() => setMobileOpen(!mobileOpen)}>
                 {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+            </div>
+
+            {/* Navigation Links */}
+            <div className={`nav-links ${mobileOpen ? "open" : ""}`}>
+                <Link to="/DodgeBot" className="nav-link" onClick={() => setMobileOpen(false)}>Home</Link>
+                <Link to="/DodgeBot/pricing" className="nav-link" onClick={() => setMobileOpen(false)}>Pricing</Link>
+                {/*<Link to="/solutions" className="nav-link" onClick={() => setMobileOpen(false)}>Solutions</Link>*/}
+                <Link to="/DodgeBot/contact" className="nav-link" onClick={() => setMobileOpen(false)}>Contact</Link>
+                <Link to="/DodgeBot/why-dodgebot" className="nav-link" onClick={() => setMobileOpen(false)}>Why Choose Dodgebot?</Link>
             </div>
         </nav>
     );

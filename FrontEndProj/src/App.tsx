@@ -15,12 +15,17 @@ function App() {
                 <div className="content">
                     <Routes>
                         <Route path="/DodgeBot/" element={<Home />} />
+                        {/*<Route path="/DodgeBot/*" element={<Home />} />*/}
                         <Route path="/" element={<Home />} />
                         <Route path="/pricing" element={<Pricing />} />
+                        <Route path="/DodgeBot/pricing" element={<Pricing />} />
                         <Route path="/solutions" element={<HappyClients />} />
+                        <Route path="/DodgeBot/solutions" element={<HappyClients />} />
                         {/*<Route path="/case-studiesies" element={<CaseStudies />} />*/}
+                        <Route path="/DodgeBot/contact" element={<Contact />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/why-dodgebot" element={<HappyClients />} />
+                        <Route path="/DodgeBot/why-dodgebot" element={<HappyClients />} />
                     </Routes>
                 </div>
                 <Footer />
